@@ -2,6 +2,7 @@ import { Console } from "console";
 import Link from "next/link";
 import { SignedIn, SignedOut } from '@clerk/nextjs'
 import { getMyImages } from "~/server/queries";
+import Image from "next/image";
 export const dynamic = "force-dynamic";
 
 
@@ -21,8 +22,7 @@ const Images = async () => {
         images.map((image) => (
           <div key={image.id} className="w-1/3 p-4">
             <p className="text-black">{image.name}</p>
-            <img src={image.url} alt="image" />
-
+            <Image src={image.url} alt={image.name} style={{ objectFit: "contain" }} fill />
           </div>
         ))
       }</div>
