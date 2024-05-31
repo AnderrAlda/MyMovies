@@ -16,13 +16,16 @@ const Images = async () => {
   return (
     <div>
 
-
       {
 
         images.map((image) => (
           <div key={image.id} className="w-1/3 p-4">
             <p className="text-black">{image.name}</p>
-            <Image src={image.url} alt={image.name} style={{ objectFit: "contain" }} fill />
+
+            <Image src={image.url} alt={image.name} style={{ objectFit: "contain" }} width={192} height={192} />
+
+
+
           </div>
         ))
       }</div>

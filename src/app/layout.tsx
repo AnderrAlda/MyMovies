@@ -7,6 +7,8 @@ import TopNav from "~/app/_components/topnav";
 import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
 import { extractRouterConfig } from "uploadthing/server";
 import { ourFileRouter } from "~/app/api/uploadthing/core";
+import { Toaster } from "sonner";
+
 
 export const metadata = {
   title: "MyMovies",
@@ -16,7 +18,7 @@ export const metadata = {
 
 
 export default function RootLayout({
-  children,
+  children
 }: {
   children: React.ReactNode;
 }) {
@@ -36,6 +38,8 @@ export default function RootLayout({
 
           <TopNav />
           {children}
+
+          <Toaster />
         </body>
       </html>
     </ClerkProvider>
