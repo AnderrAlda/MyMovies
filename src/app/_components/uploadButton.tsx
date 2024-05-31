@@ -39,10 +39,14 @@ const UploadButton = () => {
     const { inputProps } = useUploadThingInputProps("imageUploader",
         {
             onUploadBegin() {
-                toast("Uploading...", {
-                    duration: 100000,
-                    id: "upload-begin",
-                })
+                toast(
+                    <div className="flex items-center gap-2 ">
+                        <span className="text-lg">Uploading...</span>
+                    </div>,
+                    {
+                        duration: 100000,
+                        id: "upload-begin",
+                    })
             },
             onClientUploadComplete() {
 
